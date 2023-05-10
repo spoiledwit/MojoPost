@@ -38,10 +38,10 @@ const Nav = () => {
         </Link>
 
         <div className="
-        sm:flex hidden
+        sm:flex hidden 
         ">
           {session?.user ? (
-            <div>
+            <div className="flex gap-4">
               <Link href="/create-prompt"
               className="black_btn mb-2"
               >
@@ -50,18 +50,18 @@ const Nav = () => {
               <button
               type="button"
               onClick={() => signOut()}
-              className="outline_btn mb-4"
+              className="outline_btn mb-2"
               >
                 Sign Out
               </button>
 
               <Link href="/profile">
                 <Image
-                src="/assets/images/profile.svg"
+                src={session?.user.image || "/assets/images/profile.svg"}
                 alt="Profile"
                 width={30}
                 height={30}
-                className="object-contain"
+                className="object-contain rounded-full"
                 />
               </Link>
             </div>
@@ -91,7 +91,7 @@ const Nav = () => {
               flex
               ">
                 <Image 
-                src={"/assets/images/logo.svg"}
+                src={session?.user.image || "/assets/images/profile.svg"}
                 width={37}
                 height={37}
                 className="rounded-full"
@@ -148,7 +148,6 @@ const Nav = () => {
               </>)
             }
         </div>
-
     </div>
     </nav>
   )

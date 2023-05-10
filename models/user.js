@@ -10,8 +10,6 @@ const userSchema = new Schema({
     username: {
         type: String,
         required: [true, "Please provide a username"],
-        unique: [true, "That username is already in use"],
-        match: [/^[a-zA-Z0-9]+$/, "Please provide a valid username"],
     },
     image: {
         type: String,
